@@ -1,0 +1,38 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        format_sql: true
+    defer-datasource-initialization: true
+
+  data:
+    redis:
+      host: localhost
+
+  sql:
+    init:
+      mode: always
+
+  main:
+    allow-bean-definition-overriding: true
+
+  elasticsearch:
+    uris: "localhost:9200"
+
+logging.level:
+  org.hibernate.SQL: info
+
+logging:
+    level:
+      com.zaxxer.hikari.HikariConfig: DEBUG
+      com.zaxxer.hikari: TRACE
+
+oauth:
+  kakao:
+    redirect-uri: http://localhost:5173/oauth/kakao/callback
+  google:
+    redirect-uri: http://localhost:5173/oauth/google/callback
+  naver:
+    redirect-uri: http://localhost:5173/oauth/naver/callback
